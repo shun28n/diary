@@ -3,26 +3,11 @@
     <v-navigation-drawer v-model="drawer" :mobile-breakpoint="768" app>
       <v-img
         class="pa-4 pt-7"
-        height="170"
+        height="80"
         primary
         gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
       >
         <p class="">日記アプリ</p>
-        <v-container>
-          <v-row>
-            <v-col cols="3">
-              <v-avatar color="indigo" size="50" class="mb-2">
-                <v-icon dark size="40"> mdi-account-circle </v-icon>
-              </v-avatar>
-            </v-col>
-            <v-col cols="9">
-              <div class="white--text text-subtitle-1 font-weight-bold">
-                Shunya Nakamichi
-              </div>
-              <div class="white--text text-subtitle-2">@shunya_naka</div>
-            </v-col>
-          </v-row>
-        </v-container>
       </v-img>
 
       <v-divider></v-divider>
@@ -40,7 +25,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app color="primary" dark prominent height="170">
+    <v-app-bar app color="primary" dark prominent height="80">
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
@@ -51,15 +36,23 @@
       <v-container class="header-container pa-0">
         <v-row>
           <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-          <v-spacer></v-spacer>
-          <search />
-        </v-row>
-        <v-row>
-        </v-row>
-        <v-row>
-          <div>
+          <div class="mt-3">
             <live-datetime />
           </div>
+          <v-spacer></v-spacer>
+           <v-row class="mt-3 pr-14" justify="end">
+             <v-avatar color="indigo" size="50" class="mt-3">
+                <v-icon dark size="40"> mdi-account-circle </v-icon>
+            </v-avatar>
+            <v-col cols="2" >
+              <div class="white--text text-subtitle-1 font-weight-bold">Nakamichi</div>
+               <div class="white--text text-subtitle-1 font-weight-bold">Level 1</div>
+             </v-col>
+            <v-icon dark size="20" class="ml-5"> mdi-cog-outline </v-icon>
+          </v-row>
+        </v-row>
+        <v-row>
+
         </v-row>
       </v-container>
     </v-app-bar>
@@ -76,7 +69,7 @@ export default {
     drawer: null,
     items: [
       { title: "ホーム", icon: "mdi-format-list-checks", to: "/" },
-      { title: "詳細", icon: "mdi-help-box", to: "/about" },
+      { title: "表示設定", icon: "mdi-help-box", to: "/DisplaySetting" },
     ],
   }),
   components: {

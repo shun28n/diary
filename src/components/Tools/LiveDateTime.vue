@@ -1,5 +1,5 @@
 <template>
-  <div class="text-h4 ml-10">
+  <div class="text-h5 ml-5">
       {{date}}
   </div>
 </template>
@@ -14,8 +14,8 @@ export default {
     },
     methods:{
         getDate(){
-            this.date = format(new Date(), 'yyyy/MM/d　H:mm:ss')
-            setTimeout(this.getDate, 1000)
+            this.date = format(new Date(), 'yyyy/MM/d　H:mm')
+            setTimeout(this.getDate, 30000)
         }
     },
     mounted(){
